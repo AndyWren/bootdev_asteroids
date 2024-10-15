@@ -32,6 +32,10 @@ def main():
             if a.collision(player):
                 print("Game Over!")
                 sys.exit()
+            for s in shootable:
+                if a.collision(s):
+                    a.kill()
+                    s.kill()
         pygame.Surface.fill(screen, "black")
         for d in drawable:
             d.draw(screen)
